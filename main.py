@@ -6,6 +6,14 @@ import numpy as np
 from io import BytesIO
 
 app = FastAPI(title="Skin Type Detection API")
+# ---- Enable CORS (Allow React frontend to access API) ----
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all frontends
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ---- Load model & face detector ----
 MODEL_PATH = "skin_type_model_v2.h5"
