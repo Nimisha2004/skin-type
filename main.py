@@ -1,5 +1,7 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware  # ✅ ADD THIS
+
 import tensorflow as tf
 import cv2
 import numpy as np
